@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="app.js"></script>
+    <script src="papaparse.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <title>File converter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      .thumb {
+        height: 75px;
+        border: 1px solid #000;
+        margin: 10px 5px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="file" name="file" multiple onchange="parse()" />
+    <output id="list"></output>
+    <script>
+      const parse = function() {
+        console.log("im called");
+        const files = document.getElementById("file").files;
+        for (let file of files) {
+          Papa.parse(file, {
+            header: false,
+            //dynamicTyping: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+              data = ynab.convertFile(results.data);
+              console.log(data);
+            }
+          });
+        }
+      };
+    </script>
+  </body>
+</html>
