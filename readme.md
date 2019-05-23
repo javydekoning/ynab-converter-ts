@@ -14,3 +14,8 @@ Happy budgetting 💰.
 Build TS and run it through Browserify:
 
 `browserify main.js --s ynab -o app.js`
+
+## Todo: 
+
+* build landing page.
+* build browser csv download function.
