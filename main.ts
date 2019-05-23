@@ -14,7 +14,6 @@ export const convertFile = (
       }
 
       let bank;
-      console.log(Identiefiers[i].shortname);
       switch (Identiefiers[i].shortname) {
         case "rabo":
           bank = new raboBank(
@@ -24,7 +23,6 @@ export const convertFile = (
           );
           break;
         case "ingb":
-          console.log("in ING flow");
           bank = new ingBank(
             Identiefiers[i].shortname,
             Identiefiers[i].header,
@@ -32,7 +30,6 @@ export const convertFile = (
           );
           break;
         case "snsb":
-          console.log("in SNS flow");
           bank = new snsBank(
             Identiefiers[i].shortname,
             Identiefiers[i].header,
@@ -44,5 +41,3 @@ export const convertFile = (
     }
   }
 };
-
-//console.log(convertFile(examples.snsb.data));

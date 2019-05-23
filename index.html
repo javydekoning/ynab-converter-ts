@@ -1,8 +1,8 @@
 <html>
   <head>
     <script src="app.js"></script>
-    <script src="papaparse.js"></script>
-    <script src="jquery-3.4.1.min.js"></script>
+    <script src="deps/papaparse.js"></script>
+    <script src="deps/jquery-3.4.1.min.js"></script>
     <title>File converter</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
@@ -18,7 +18,6 @@
     <output id="list"></output>
     <script>
       const parse = function() {
-        console.log("im called");
         const files = document.getElementById("file").files;
         for (let file of files) {
           Papa.parse(file, {

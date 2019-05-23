@@ -40,7 +40,6 @@ const IdentifierSNS: IBankIdentifier = {
   shortname: "snsb",
   header: null,
   identify: function(exportfile) {
-    console.log(exportfile[0][1]);
     return /NL\d{2}SNSB\d{10}/.test(exportfile[0][1]);
   }
 };
